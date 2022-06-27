@@ -15,7 +15,6 @@ observation = mgr.weather_at_place('Sorocaba,BR')
 weather = observation.weather
 
 file_csv = open('uber_prices_data.csv', 'w', newline='', encoding='utf-8')
-write_csv = csv.writer(file_csv)
 
 headers = {
     "accept": "*/*",
@@ -44,6 +43,8 @@ while True:
 
         row = []
 
+	    write_csv = csv.writer(file_csv)
+
         for key in fares:
             element = fares[key] 
 
@@ -60,6 +61,7 @@ while True:
         row.append(weather.detailed_status)
         row.append(weather.temperature('celsius')['temp'])
         write_csv.writerow(row)
+	    write_csv.close()
 
         sleep(5)
 
