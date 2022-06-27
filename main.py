@@ -43,10 +43,10 @@ while True:
 
         row = []
 
-	    write_csv = csv.writer(file_csv)
+        write_csv = csv.writer(file_csv)
 
         for key in fares:
-            element = fares[key] 
+            element = fares[key]
 
             if key == "20022235":
                 row.append(fares[key]["fare"].replace("R$", ""))
@@ -61,16 +61,14 @@ while True:
         row.append(weather.detailed_status)
         row.append(weather.temperature('celsius')['temp'])
         write_csv.writerow(row)
-	    write_csv.close()
+        write_csv.close()
 
         sleep(5)
 
     except KeyboardInterrupt:
-        write_csv.close() 
+        write_csv.close()
         break
 
     except Exception as e:
         print(e)
         continue
-
-    
