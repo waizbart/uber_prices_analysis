@@ -63,6 +63,8 @@ while True:
         write_csv.writerow(row)
         write_csv.close()
 
+        sleep(60)
+
     except KeyboardInterrupt:
         write_csv.close()
         break
@@ -72,4 +74,4 @@ while True:
         sleep(60)
         continue
 
-    sleep(60)
+    
