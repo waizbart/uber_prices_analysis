@@ -63,12 +63,13 @@ while True:
         write_csv.writerow(row)
         write_csv.close()
 
-        sleep(5)
-
     except KeyboardInterrupt:
         write_csv.close()
         break
 
     except Exception as e:
         print(e)
+        sleep(60)
         continue
+
+    sleep(60)
